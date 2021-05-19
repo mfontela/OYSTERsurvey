@@ -1,4 +1,5 @@
-#01_load_data
+#01_load
+#load packages
 library(tidyverse)
 library(readxl)
 library(ggrepel)
@@ -7,4 +8,9 @@ library(readxl)
 library(patchwork)
 library(scales)
 
-D <- read.csv("C:/Users/MFontela/Nextcloud/OYSTER/Survey2020/Quant_folder_20210219/Datasheets/Quant_mf.csv", sep=";") #quantitative data
+#load data
+
+D <- read_excel("MASTER copy survey2020 covid19.xlsx", 
+                sheet = "Quantitative coded data")
+#Convert character to numeric
+D<-mutate_if(D, is.character,as.numeric)

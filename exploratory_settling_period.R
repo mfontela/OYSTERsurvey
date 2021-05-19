@@ -28,9 +28,10 @@ ggplot(d, aes(Q14_a))+
   scale_y_continuous(labels = percent_format())
   
 ggplot(d, aes(Q22_1))+
-  geom_histogram(aes(y = stat(width*density)), fill="black", alpha=.5,binwidth = 1)+
+  # geom_histogram(aes(y = stat(width*density)), fill="black", alpha=.5,binwidth = 1)+
   scale_y_continuous(labels = percent_format())+
   geom_histogram(data=d[d$Q14_a==9,], aes(y = stat(width*density)), fill="red", alpha=.5,binwidth = 1)+
+  geom_histogram(data=d[d$Q14_a<9,], aes(y = stat(width*density)), fill="blue", alpha=.5,binwidth = 1)+
   labs(y="%")+
   scale_x_continuous(breaks = c(seq(1,6)), labels=c("Much better",
                                                "Somewhat better",
