@@ -21,9 +21,8 @@ D%>%
   mutate(percent=(n/sum(n))*100)%>%
   ggplot(., aes(x="", y=-percent, fill=Q28))+
   geom_bar(stat = "identity", position="stack")+
-  ggrepel::geom_text_repel(aes(label=n), size=4, colour="black",position = position_stack(vjust = 0.5))+
-  # geom_text(aes(label=n), size=4, colour="black", position = position_stack(vjust = 0.5))+
-  labs(y="% Percentage",x="", title="how would you rate the effect of Covid-19 and the related measures on your career in the long term?")+
+  geom_text(aes(label=n), size=4, colour="black", position = position_stack(vjust = 0.5))+
+  labs(y="% Percentage",x="", title="How would you rate the effect of Covid-19 and the related measures on your career in the long term?")+
   scale_fill_brewer(type = "div", palette = "RdBu")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0), breaks = c(-100, -75, -50, -25, 0), labels = c(breaks = c(0, 25, 50, 75, 100)))+
