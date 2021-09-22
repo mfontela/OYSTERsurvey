@@ -11,3 +11,5 @@ source("Q14vQ28_analysis.R")
 
 #Career stage vs gender
 source("Careerstage_gender_stacked.R")
+# ECRs rated the effect of working from home more positively than others
+source("Q19_1plot.R")

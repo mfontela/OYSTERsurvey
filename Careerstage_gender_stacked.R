@@ -19,12 +19,6 @@
 # 3. Research assitant+researcher+other ECR
 
 #We need to play with gender and stage (see 03_basic_manipulations for the criteria)
-ggplot(D, aes(fill=gender, y=stage)) + 
-  geom_bar(position="stack")+
-  coord_flip() +
-  # geom_bar(aes(fill=gender), alpha=.73, position="stack", stat = "count")+
-  OYSTERtheme+
-  labs(x="Number of respondents", y="")
 
 D %>% 
   count(stage, gender) %>% 
@@ -34,6 +28,11 @@ D %>%
   ggplot(., aes(y = stage, x = perc, fill=gender)) +
   geom_bar(position="stack", stat = "identity")+
   OYSTERtheme+
+  scale_fill_manual(values=OYSTERpalette)+
   # coord_flip() +
-  labs(y="Stage career", x="Percentage (%)", fill="Gender")+
-  scale_x_continuous(labels = c("0", "20", "40", "60"))
+  labs(y="Stage career", x="Percentage of respondents (%)", fill="Gender")+
+  scale_x_continuous(labels = c("0", "20", "40", "60"))+
+  scale_y_discrete(labels=NULL)+
+  geom_text(data=function(x) subset(x,stage=="PhD student"), aes(x=.1,label=stage), hjust=0, colour="black", size=5)+
+geom_text(data=function(x) subset(x,stage=="Postdoctoral researcher"), aes(x=.1,label=stage), hjust=0, colour="black", size=5)+
+geom_text(data=function(x) subset(x,stage=="Research assistant/Researcher/other ECR"), aes(x=.1,label=stage),hjust=0,  colour="black",  size=5)
