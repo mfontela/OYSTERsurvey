@@ -45,10 +45,6 @@ D$Q18_1=factor(D$Q18_1, levels=c(
   "A lot less"))
 
 
-ggplot(D, aes(x=Q18_1, colour=as.factor(Q12_b)))+
-  geom_boxplot()
-
-
 D$Q18_v2=NA
 D$Q18_v2[D$Q18_1_0==1]=0
 D$Q18_v2[D$Q18_1_1==1]=1
@@ -72,6 +68,7 @@ ggplot(D, aes(y=Q18_v2, x=location, colour=Location))+
     "No change",
     "A little less",
     "A lot less"))+
-  theme(axis.text.x = element_text(angle=35))+
+  theme(axis.text.x = element_text(angle=35),
+        panel.grid.major.x = element_line(colour="gray", size=1,linetype=2))+
   coord_flip()+
   scale_color_manual(values=OYSTERpalette4)
