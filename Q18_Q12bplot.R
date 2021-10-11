@@ -72,3 +72,8 @@ ggplot(D, aes(y=Q18_v2, x=location, colour=Location))+
         panel.grid.major.x = element_line(colour="gray", size=1,linetype=2))+
   coord_flip()+
   scale_color_manual(values=OYSTERpalette4)
+
+save_svg=0
+if (save_svg) {
+  ggsave("Figure3_raw.svg", path = "output", width = 80, height = 50, units = "cm")
+}

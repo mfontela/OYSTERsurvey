@@ -30,9 +30,11 @@ D %>%
   OYSTERtheme+
   scale_fill_manual(values=OYSTERpalette)+
   # coord_flip() +
-  labs(y="Stage career", x="Percentage of respondents (%)", fill="Gender")+
+  labs(y="Career stage", x="Percentage of respondents (%)", fill="Gender")+
   scale_x_continuous(labels = c("0", "20", "40", "60"))+
   scale_y_discrete(labels=NULL)+
-  geom_text(data=function(x) subset(x,stage=="PhD student"), aes(x=.1,label=stage), hjust=0, colour="black", size=5)+
-geom_text(data=function(x) subset(x,stage=="Postdoctoral researcher"), aes(x=.1,label=stage), hjust=0, colour="black", size=5)+
-geom_text(data=function(x) subset(x,stage=="Research assistant/Researcher/other ECR"), aes(x=.1,label=stage),hjust=0,  colour="black",  size=5)
+  geom_text(data=function(x) subset(x,stage=="PhD student"), aes(x=.1,label=stage), hjust=-2.6, colour="black", size=7)+
+geom_text(data=function(x) subset(x,stage=="Postdoctoral researcher"), aes(x=.1,label=stage), hjust=-1.35, colour="black", size=7)+
+geom_text(data=function(x) subset(x,stage=="Research assistant/Researcher/other ECR"), aes(x=.1,label=stage),hjust=-.75,  colour="black",  size=7)
+
+#NOTE: the geom_text is preliminar. Best option/solution for the final manuscript. Export as *.svg and adjust it manually (a little bit of postproduction, yes... ;)

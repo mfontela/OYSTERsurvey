@@ -7,12 +7,13 @@ OYSTERpalette<- c(rgb(232,89,42, maxColorValue = 255), #red ball logo
                   rgb(242,189,18, maxColorValue = 255)) #green ball logo
 OYSTERtheme<-theme_minimal()+
   theme(text = element_text(colour=OYSTERcolor, family = "sans", size = 10), # arial 10 
-        # panel.grid.major = element_blank(),
+        panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         axis.title = element_text(size = rel(1.3)),
         plot.title=element_text(size=rel(1.3), lineheight=.9,
                                 face="bold", colour=OYSTERcolor),
-        axis.text = element_text(size = rel(1.30)))
+        axis.text = element_text(size = rel(1.30)),
+        legend.title.align=0.5)
 
 
 OYSTERpalette4<- c(rgb(232,89,42, maxColorValue = 255), #red ball logo
