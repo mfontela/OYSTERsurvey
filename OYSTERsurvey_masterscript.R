@@ -3,7 +3,7 @@ source("01_load.R") #load packages and data (data not available online for data 
 source("02_plot_theme.R") #common plot theme
 source("03_basic_manipulations.R") #some basic transformations of data
 
-#Individual scripts for plots
+#Individual scripts for plots (not used in the first version of the manuscript)
 source("Q16plot.R")
 source("Q20plot.R")
 source("Q28plot.R")

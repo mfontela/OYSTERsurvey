@@ -45,11 +45,13 @@ d$perc[d$stage=="Research assistant/Researcher/other ECR"]=d$n[d$stage=="Researc
   ggplot(d, aes(x = Q19_1, y = perc, fill=stage)) +
     geom_point(aes(colour=stage, shape = stage), size=5)+
     OYSTERtheme+
-  scale_fill_manual(values=OYSTERpalette)+
-    scale_colour_manual(values=OYSTERpalette)+
-    labs(y="Percentage of respondents by stage career group (%)", x="")+
+  scale_fill_manual(values=OYSTERpalette, name="Career stage")+
+    scale_colour_manual(values=OYSTERpalette, name="Career stage")+
+    labs(y="Respondents by career stage group (%)", 
+         x="Home-working effect", shape="Career stage")+
     scale_y_continuous(breaks=seq(0,0.5,0.1), labels = c("0", "10", "20", "30", "40", "50"))+
-    theme(axis.text.x = element_text(angle=35, vjust = 1))
+    theme(axis.text.x = element_text(angle=35, vjust = 0.7, hjust=0.6))+
+    theme(axis.line = element_line(colour=OYSTERcolor, size=1.1))
     
 
   
