@@ -11,7 +11,7 @@ library(scales)
 #load data
 
 D <- read_excel("MASTER copy survey2020 covid19.xlsx", 
-                sheet = "Quantitative coded data")
+                sheet = "Quantitative coded data") #DATA available upon reasonable request
 #Convert character to numeric
 D<-mutate_if(D, is.character,as.numeric)
 

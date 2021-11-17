@@ -1,5 +1,4 @@
 # plot theme
-#NOTE: preliminar! this is only a quick draft, the help of someone with good taste for graphic design is appreciated 
 #set the ggplot theme
 OYSTERcolor<-rgb(0,94,157,maxColorValue = 255) #rgb colour from OYSTER logo letters https://www.euromarinenetwork.eu/sites/default/files/header%20images/OYSTER_col_logo_spaced_v2.png
 
