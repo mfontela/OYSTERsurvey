@@ -14,3 +14,6 @@ source("Figure2.R")
 #Figure 3
 # Field vs desk felt less pressure
 source("Figure3.R") 
+
+#Supp.info
+source("Supplementary_figures-descriptives.R")
