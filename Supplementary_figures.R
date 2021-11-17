@@ -14,7 +14,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q11: Did you have any care duties during the Covid-19 pandemic?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -38,7 +38,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q14: Have you been prevented from accessing your usual place(s) of work due to Covid-19 measures?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -62,7 +62,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q15: Was your institution supportive in providing access to what you need to do your job?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -88,7 +88,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q16: Has your funding been extended?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -116,7 +116,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q20: Would you prefer to work from home more often than you did before Covid-19 measures were introduced?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -140,7 +140,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q26:	In a post Covid-19 world, do you forsee permanent changes to your day-to-day research practices?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -162,9 +162,9 @@ print(
   mutate(Q27 = replace(Q27, Q27 == 1, "No"))%>%
   ggplot(., aes(x="", y=percent, fill=factor(Q27, levels=c("Yes", "No"))))+
   geom_bar(stat = "identity", position="stack")+
-  geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
+  geom_text(aes(label=n), size=6, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q27: Do you think the way we do marine research will be affected by Covid-19 over the next 10 years?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -194,7 +194,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q29:	Since the Covid-19 crisis, have you considered changing your career path?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -231,7 +231,7 @@ print(
   geom_bar(stat = "identity", position="stack")+
   geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q22:	How was communication with your research group affected by Covid-19?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -259,9 +259,9 @@ print(
   mutate(Q23_1 = replace(Q23_1, Q23_1 == 5, "Much worse"))%>%
   ggplot(., aes(x="", y=percent, fill=factor(Q23_1, levels=c("Much better", "Somewhat better", "Unchanged", "Somewhat worse", "Much worse"))))+
   geom_bar(stat = "identity", position="stack")+
-  geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
+  geom_text(aes(label=n), size=5, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q23:	Has your relationship with your supervisor changed since Covid-19?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
@@ -289,9 +289,9 @@ print(
   mutate(Q28_1 = replace(Q28_1, Q28_1 == 5, "Very positive"))%>%
   ggplot(., aes(x="", y=percent, fill=factor(Q28_1, levels=c("Very negative", "Somewhat negative", "No effect", "Somewhat positive", "Very positive"))))+
   geom_bar(stat = "identity", position="stack")+
-  geom_text(aes(label=n), size=7, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
+  geom_text(aes(label=n), size=5, colour=OYSTERcolor, position = position_stack(vjust = 0.5))+
   labs(y="% Percentage",x="", title="Q28:	How would you rate the effect of Covid-19 and the related measures on your career in the long term?")+
-  scale_fill_brewer(palette="Accent")+
+  scale_fill_brewer(palette="Pastel1")+
   scale_x_discrete(expand=c(0,0))+
   scale_y_continuous(expand=c(0,0))+
   coord_flip()+
