@@ -298,3 +298,31 @@ print(
   OYSTERtheme+
   theme(legend.title = element_blank())
 )
+
+#Q24 & Q25 plot
+#What has your supervisor/employer done well/poorly during Covid-19?
+#Data in "Q24_25_Supervisors_wellVSbad.xlsx" (local copy)
+
+Supervisor = factor(c(1,2,1,2,1,2,1,2,1,2),labels=c("Well", "Poorly"))
+Keyword = factor(c(1,1,2,2,3,3,4,4,5,5),labels=c("Communication","Support","Flexibility", "Management","Availability"))
+number_answers = c(148,85,59,41,45,26,41,24,46,41)
+df=data.frame(Supervisor,Keyword,number_answers) 
+
+
+print(
+  df%>%group_by(Supervisor)%>%
+  mutate(perc=number_answers/sum(number_answers))%>%
+  ggplot(., aes(y=Supervisor, x=-perc*100, fill=Keyword)) +
+  geom_bar(stat="identity")+
+  geom_text(aes(label=number_answers), position = position_stack(vjust = 0.5), size=8)+
+  scale_x_continuous(breaks = c(-100, -75, -50, -25, 0), labels= c("0", "25", "50", "75", "100"), expand = c(0,0))+
+  scale_y_discrete(expand=c(0,0))+
+  scale_fill_brewer(palette="Pastel1")+
+  labs(x="% of respondents", y="", title="What has your supervisor/employer done well/poorly during Covid-19?")+
+  theme_minimal()+
+  OYSTERtheme+
+  theme(legend.position="top",
+        legend.title = element_blank(),
+        legend.text = element_text(size=12),
+        axis.text.y = element_text(size=12, colour = OYSTERcolor, face="bold"),
+        plot.title = element_text(size=18, face="bold")))
